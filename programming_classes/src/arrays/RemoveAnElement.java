@@ -1,0 +1,82 @@
+package arrays;
+
+import java.util.Scanner;
+
+public class RemoveAnElement {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int[] ar = ArrayOperations.readarray();//Another class
+			
+		System.out.println("Enter the index where you want to insert element");
+		int index = sc.nextInt();
+		
+		isRemove(ar,index);
+		sc.close();
+		
+	}
+	
+	public static void isRemove(int[] ar, int index) {
+		//new array
+		int[] br = new int[ar.length-1];
+		
+		if(index < 0 || index > br.length)
+		{
+			System.out.println("index invalid");
+		}
+		else
+		{
+			
+			for(int i = 0;i<br.length;i++) {
+				if(i<index)
+					br[i] = ar[i];
+				else
+					br[i] = ar[i+1];
+			}
+			ArrayOperations.display(br);
+		}
+	}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------
+
+
+//package arrays;
+//
+//import java.util.Scanner;
+//
+//public class RemoveAnElement {
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//		int[] ar = ArrayOperations.readarray();//Another class
+//			
+//		int[] br = new int[ar.length-1];
+//		System.out.println("Enter the index value");
+//		int index = sc.nextInt();
+//		
+//		if(index < 0 || index > br.length)
+//		{
+//			System.out.println("index invalid");
+//		}
+//		else
+//		{
+//			
+//			for(int i = 0;i<br.length;i++) {
+//				if(i<index)
+//					br[i] = ar[i];
+//				else
+//					br[i] = ar[i+1];
+//			}
+//			
+//			//to print
+//			ArrayOperations.display(br);
+//		}
+//		
+//
+//		sc.close();
+//		
+//	}
+//
+//}
